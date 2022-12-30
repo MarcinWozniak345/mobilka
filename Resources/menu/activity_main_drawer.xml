@@ -6,31 +6,36 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/WprowadzLek"
+			android:icon="@drawable/baseline_add_24"
             android:title="Wprowadz Nowy Lek" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+		<item
+            android:id="@+id/PokazMojHarmonogram"
+			android:icon="@drawable/baseline_calendar_month_24"
+            android:title="Moj Harmonogram" />
+		<item
+            android:id="@+id/PokazMojeLeki"
+			android:icon="@drawable/baseline_calendar_month_24"
+            android:title="Moje Leki" />
+		<item
+            android:id="@+id/Znajomi"
+			android:icon="@drawable/baseline_people_alt_24"
+            android:title="Znajomi" />
+		<item
+            android:id="@+id/WyslijZaproszenie"
+			android:icon="@drawable/baseline_person_add_24"
+            android:title="Wyslij zaproszenie" />
+		<item
+            android:id="@+id/PokazZaproszenia"
+			android:icon="@drawable/baseline_notifications_none_24"
+            android:title="Pokaz Zaproszenia" />
     </group>
 
-    <item android:title="Communicate">
+    <item>
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/Wyloguj"
+                android:icon="@drawable/baseline_logout_24"
+                android:title="Wyloguj" />
         </menu>
     </item>
 

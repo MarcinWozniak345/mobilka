@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/login"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/przyjmij"
+         android:layout_width="250px"
+         android:layout_height="wrap_content"
+        android:text="przyjmij"
+        
+        />
+    <Button
+        android:id="@+id/odrzuc"
+        android:layout_marginTop="-97px"
+        android:layout_marginLeft="260px"   
+         android:layout_width="250px"
+         android:layout_height="wrap_content"
+        android:text="odrzuc"
+        />
+
+
+</LinearLayout>

@@ -4,6 +4,8 @@ using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
+using Android.Widget;
+using AndroidX.Annotations;
 using AndroidX.AppCompat.App;
 using AndroidX.AppCompat.Widget;
 using AndroidX.Core.View;
@@ -21,16 +23,18 @@ namespace WezLekApp
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            ISharedPreferences pref = Application.Context.GetSharedPreferences("UserInfo", FileCreationMode.Private);
+            string testtokena = pref.GetString("Token", String.Empty);
             //Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
-            Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            AndroidX.AppCompat.Widget.Toolbar toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.SetHomeButtonEnabled(true);
            // SupportActionBar.SetHomeAsUpIndicator(Resource.Id.)
-            FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
-            fab.Click += FabOnClick;
-
+           // FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
+           // fab.Click += FabOnClick;
+           
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
             drawer.AddDrawerListener(toggle);
@@ -38,6 +42,7 @@ namespace WezLekApp
 
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
+            navigationView.BringToFront();
         }
 
         public override void OnBackPressed()
@@ -85,32 +90,42 @@ namespace WezLekApp
                 Intent intent = new Intent(this, typeof(WprowadzLekActivity));
                 StartActivity(intent);               
             }
-
-
-            //if (id == Resource.Id.WprowadzLek)
+            if (id == Resource.Id.WyslijZaproszenie)
+            {
+                Intent intent = new Intent(this, typeof(WyslijZaproszenieActivity));
+                StartActivity(intent);
+            }
+            if (id == Resource.Id.Wyloguj)
+            {
+                ISharedPreferences pref = Application.Context.GetSharedPreferences("UserInfo", FileCreationMode.Private);
+                ISharedPreferencesEditor edit = pref.Edit();
+                edit.Clear();
+                Intent intent = new Intent(this, typeof(LoginActivity));
+                StartActivity(intent);
+            }
+            if (id == Resource.Id.PokazMojeLeki)
+            {
+                Intent intent = new Intent(this, typeof(MojeLekiActivity));
+                StartActivity(intent);
+            }
+            if (id == Resource.Id.PokazMojHarmonogram)
+            {
+                Intent intent = new Intent(this, typeof(MojHarmonogramActivity));
+                StartActivity(intent);
+            }
+            if (id == Resource.Id.PokazZaproszenia)
+            {
+                Intent intent = new Intent(this, typeof(MojHarmonogramActivity));
+                StartActivity(intent);
+            }
+            //else if (id == Resource.Id.nav_share)
             //{
-            //    // Handle the camera action
+
             //}
-            else if (id == Resource.Id.nav_gallery)
-            {
+            //else if (id == Resource.Id.nav_send)
+            //{
 
-            }
-            else if (id == Resource.Id.nav_slideshow)
-            {
-
-            }
-            else if (id == Resource.Id.nav_manage)
-            {
-
-            }
-            else if (id == Resource.Id.nav_share)
-            {
-
-            }
-            else if (id == Resource.Id.nav_send)
-            {
-
-            }
+            //}
 
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             drawer.CloseDrawer(GravityCompat.Start);
