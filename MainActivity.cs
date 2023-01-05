@@ -115,17 +115,14 @@ namespace WezLekApp
             }
             if (id == Resource.Id.PokazZaproszenia)
             {
-                Intent intent = new Intent(this, typeof(MojHarmonogramActivity));
+                Intent intent = new Intent(this, typeof(PokazZaproszeniaActivity));
                 StartActivity(intent);
             }
-            //else if (id == Resource.Id.nav_share)
-            //{
-
-            //}
-            //else if (id == Resource.Id.nav_send)
-            //{
-
-            //}
+            if (id == Resource.Id.Znajomi)
+            {
+                Intent intent = new Intent(this, typeof(ZnajomiActivity));
+                StartActivity(intent);
+            }
 
             DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             drawer.CloseDrawer(GravityCompat.Start);

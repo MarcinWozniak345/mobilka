@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+                 <EditText
+            android:id="@+id/numberOfTablets"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="60dp"
+            android:textColor="@android:color/black"
+            android:hint="ilosc w opakowaniu"
+            >
+                                 
+            
+            
+        </EditText>
+        <EditText
+            android:id="@+id/dose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="120dp"
+            android:textColor="@android:color/black"
+            android:hint="substancja"
+            >
+                                 
+            
+            
+        </EditText>
+         <EditText
+            android:id="@+id/DailyDosage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="180dp"
+            android:textColor="@android:color/black"
+            android:hint="ile razy dziennie"
+            >
+                                 
+            
+            
+        </EditText>
+         <EditText
+            android:id="@+id/Hours"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="240dp"
+            android:textColor="@android:color/black"
+            android:hint="godziny"
+            >
+                                 
+            
+            
+        </EditText>
+
+
+
+            <Button
+         android:layout_width="200dp"
+         android:layout_height="35dp"
+        android:layout_marginTop="320dp"
+         android:id="@+id/NowyLek"
+         android:layout_centerHorizontal="true"
+            android:text="Wprowadz Lek"
+        android:background="@color/colorAccent"   
+        />
+    </RelativeLayout>
+
+
+
+</LinearLayout>
