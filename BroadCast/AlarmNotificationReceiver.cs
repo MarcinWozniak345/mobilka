@@ -18,12 +18,12 @@ namespace WezLekApp.BroadCast
         public override void OnReceive(Context context, Intent intent)
         {
             NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
-
+            ISharedPreferences pref = Application.Context.GetSharedPreferences("UserInfo", FileCreationMode.Private);
             builder.SetAutoCancel(true)
                 .SetDefaults((int)NotificationDefaults.All)
                 .SetSmallIcon(Resource.Drawable.logo64x64)
                 .SetContentTitle("WezLekApp")
-                .SetContentText("Wez lek: ")
+                .SetContentText("Wez lek: " + pref.GetString("Lek", String.Empty))
                 .SetContentInfo("info");
 
             NotificationManager manager = (NotificationManager)context.GetSystemService(Context.NotificationService);

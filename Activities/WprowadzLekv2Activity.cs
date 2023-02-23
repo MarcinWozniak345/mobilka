@@ -99,6 +99,9 @@ namespace WezLekApp.Activities
                             }
                             k++;
                         }
+                        
+                        ISharedPreferencesEditor edit = pref.Edit();
+                        edit.PutString("Lek", string.Empty);
                         StartActivity(new Intent(this, typeof(MainActivity)));
                     });
                     alert.Show();
@@ -129,8 +132,8 @@ namespace WezLekApp.Activities
 
             myIntent = new Intent(this, typeof(AlarmToastReceiver));
             pendingIntent = PendingIntent.GetBroadcast(this, 0, myIntent, 0);
-
-
+            
+            manager.SetExact(AlarmType.RtcWakeup, (long)(time - new DateTime(1970, 1, 1)).TotalSeconds, pendingIntent);
             
         }
 
